@@ -76,4 +76,14 @@ updateCookie = (updatedCookie) => {
 };
 ```
 
-10. Try it again. Yup, it's working perfectly.
+11. Let's also update the slug of the cookie, in case the name of the cookie was updated.
+
+```javascript
+updateCookie = (updatedCookie) => {
+  const cookie = this.cookies.find((cookie) => cookie.id === updatedCookie.id);
+  for (const key in cookie) cookie[key] = updatedCookie[key];
+  cookie.slug = slugify(cookie.name);
+};
+```
+
+12. Try it again. Yup, it's working perfectly.
