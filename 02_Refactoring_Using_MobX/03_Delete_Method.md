@@ -1,4 +1,4 @@
-1. Now let's move the `deleteCookie` to our lovely store. Remove the `setCookies` line and directly update `this.cookies`
+1. Now let's move the `deleteCookie` to our lovely store. Remove the `setCookies` line and directly update `this.cookies`.
 
 ```javascript
 deleteCookie = (cookieId) => {
@@ -6,13 +6,25 @@ deleteCookie = (cookieId) => {
 };
 ```
 
-2. Go to `DeleteButton` component, import `cookieStore`:
+2. Let's also set `deleteCookie` as an `action`.
+
+```javascript
+constructor() {
+    makeObservable(this, {
+      cookies: observable,
+      createCookie: action,
+      deleteCookie: action,
+    })
+  }
+```
+
+3. Go to `DeleteButton` component, import `cookieStore`:
 
 ```javascript
 import cookieStore from "../../stores/cookieStore";
 ```
 
-3. Replace `deleteCookie` from `props` with `cookieStore.deleteCookie`
+4. Replace `deleteCookie` from `props` with `cookieStore.deleteCookie`
 
 ```javascript
 const handleDelete = (event) => {
@@ -21,6 +33,6 @@ const handleDelete = (event) => {
 };
 ```
 
-4. Try the delete button. It's working!
+5. Try the delete button. It's working!
 
-5. Delete both `_cookies` state and `deleteCookie` method in `App`, `CookieList`, `CookieItem`, `DeleteButton` and `CookieDetail`. The code looks much better!!
+6. Delete both `_cookies` state and `deleteCookie` method in `App`, `CookieList`, `CookieItem`, `DeleteButton` and `CookieDetail`. The code looks much better!!

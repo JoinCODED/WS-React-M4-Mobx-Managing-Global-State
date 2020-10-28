@@ -16,20 +16,20 @@ import cookieStore from "../stores/cookieStore";
 5. First, remove the method's `const` and replace `_cookies` with `cookies`:
 
 ```javascript
-createCookie = (newCookie) => {
-  newCookie.id = cookies[cookies.length - 1].id + 1;
-  newCookie.slug = slugify(newCookie.name);
-  setCookies((oldCookies) => [...oldCookies, newCookie]);
+createCookie = (cookie) => {
+  cookie.id = cookies[cookies.length - 1].id + 1;
+  cookie.slug = slugify(cookie.name);
+  setCookies([...oldCookies, cookie]);
 };
 ```
 
-6. In a mobx store we're dealing with normal properties, so we don't need set methods. We can directly change `cookies`, but remember! In a class, to refer to one of its properties we need to use `this`!
+6. In a mobx store we're dealing with normal properties, so we don't need set methods. We can directly change `cookies`. But remember! In a class, to refer to one of its properties we need to use `this`!
 
 ```javascript
-createCookie = (newCookie) => {
-  newCookie.id = this.cookies[this.cookies.length - 1].id + 1;
-  newCookie.slug = slugify(newCookie.name);
-  this.cookies.push(newCookie);
+createCookie = (cookie) => {
+  cookie.id = this.cookies[this.cookies.length - 1].id + 1;
+  cookie.slug = slugify(cookie.name);
+  this.cookies.push(cookie);
 };
 ```
 
@@ -73,4 +73,15 @@ import { observer } from "mobx-react";
 export default observer(CookieList);
 ```
 
-12. Now we can remove `createCookie` from `App`, `CookieList` and `CookieModal`! A HUUUUGEE TARARARAAAAAAA!!!
+12. Well... it's still not updating! There's one more thing we need to do... We need to set the `createCookie` function as an `action` in the store.
+
+```javascript
+constructor() {
+  makeObservable(this, {
+    cookies: observable,
+    createCookie: action,
+  })
+}
+```
+
+13. Now we can remove `createCookie` from `App`, `CookieList` and `CookieModal`! A HUUUUGEE TARARARAAAAAAA!!!
