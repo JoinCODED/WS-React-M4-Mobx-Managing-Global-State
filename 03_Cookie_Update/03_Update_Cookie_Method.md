@@ -66,19 +66,19 @@ constructor() {
 }
 ```
 
-7. Let's test it out. Nothing happened. That's because `CookieItem` must be an `observer`. Import `observer`
+8. Let's test it out. Nothing happened. That's because `CookieItem` must be an `observer`. Import `observer`
 
 ```javascript
 import { observer } from "mobx-react";
 ```
 
-8. Wrap `CookieItem` with `observer`
+9. Wrap `CookieItem` with `observer`
 
 ```javascript
 export default observer(CookieItem);
 ```
 
-9. Let's try it again. It's working!!!
+11. Let's try it again. It's working!!!
 
 10. But the code is so ugly! To clean it up, we will loop over our `cookie` object and only replace the properties that exist in `updatedCookie`. Let's take a look at the [documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) first.
 
@@ -89,7 +89,7 @@ updateCookie = (updatedCookie) => {
 };
 ```
 
-11. Let's also update the slug of the cookie, in case the name of the cookie was updated.
+12. Let's also update the slug of the cookie, in case the name of the cookie was updated.
 
 ```javascript
 updateCookie = (updatedCookie) => {
@@ -99,4 +99,4 @@ updateCookie = (updatedCookie) => {
 };
 ```
 
-12. Try it again. Yup, it's working perfectly.
+13. Try it again. Yup, it's working perfectly.
