@@ -53,6 +53,19 @@ updateCookie = (updatedCookie) => {
 };
 ```
 
+7. Since we're updating data in the store, let's set the `updateCookie` method as an `action` in the `constructor`.
+
+```javascript
+constructor() {
+  makeObservable(this, {
+    cookies: observable,
+    createCookie: action,
+    updateCookie: action,
+    deleteCookie: action,
+  })
+}
+```
+
 7. Let's test it out. Nothing happened. That's because `CookieItem` must be an `observer`. Import `observer`
 
 ```javascript
