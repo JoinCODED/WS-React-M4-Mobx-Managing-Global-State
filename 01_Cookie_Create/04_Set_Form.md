@@ -36,7 +36,7 @@ To create a cookie form we need 4 fields, `name`, `description`, `price` and `im
 </form>
 ```
 
-3. Now we need to set the type of each input field to prevent the user from writing strings in a the price field for example. To do that, we will use the attribute `type`. `name`, `description` and `image` are supposed to be of type `text` and `price` is `number`. Keep in mind that our images as this point are image addresses or URLs:
+3. Now we need to set the type of each input field to prevent the user from writing strings in the price field for example. To do that, we will use the attribute `type`. `name`, `description` and `image` are supposed to be of type `text` and `price` is of type `number`. Keep in mind that our images at this point are image addresses or URLs:
 
 ```jsx
 <form>

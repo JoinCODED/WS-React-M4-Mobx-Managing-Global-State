@@ -1,6 +1,6 @@
 In this lesson, we will create more cookies. We will have a create button, when pressing on it, it will open a modal that has a form.
 
-1. Let's add a plus icon in our list page. But how can we add icons? We will use a library called [React Icons](https://react-icons.github.io/). Let's install it.
+1. Let's add a plus icon in our list page. But how can we add icons? We will use a library called [React Icons](https://react-icons.github.io/react-icons/). Let's install it.
 
 ```shell
   $ yarn add react-icons
