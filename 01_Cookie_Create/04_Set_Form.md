@@ -121,7 +121,7 @@ const handleChange = (event) => {
 
 11. Let's add a `Create` button. In `styles`:
 
-```javascript
+```
 export const CreateButtonStyled = styled.button`
   color: ${(props) => props.theme.backgroundColor};
   background-color: ${(props) => props.theme.mainColor};
