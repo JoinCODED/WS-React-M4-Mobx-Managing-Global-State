@@ -61,13 +61,13 @@ return (
 );
 ```
 
-9. As you can see we need to pass `isOpen` and `setIsOpen` as `props`. So go back to `CookieList`, and pass them.
+9. As you can see we need to pass `isOpen` and `closeModal` as `props`. So go back to `CookieList`, and pass them.
 
 ```jsx
 <CookieModal isOpen={isOpen} closeModal={closeModal} />
 ```
 
-10. Pass `isOpen` and `setIsOpen` to `Modal`.
+10. Pass `isOpen` and `closeModal` to `Modal`.
 
 ```jsx
 <Modal
@@ -81,18 +81,3 @@ return (
 ```
 
 11. Let's try out our modal. Yay It's working!
-
-12. Now we'll pass it to `Modal`:
-
-```jsx
-<Modal
-  isOpen={showModal}
-  onRequestClose={closeModal}
-  style={modalStyle}
-  contentLabel="Example Modal"
->
-  <h3>New Cookie</h3>
-</Modal>
-```
-
-13. Our modal is ready! Let's add a form to it!
