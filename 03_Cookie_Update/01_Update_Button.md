@@ -2,7 +2,7 @@ Let's create an update button in our cookie item component that opens the modal.
 
 1. In `styles.js`, create a styled component called `UpdateButtonStyled`
 
-```javascript
+```
 export const UpdateButtonStyled = styled.p`
   color: ${(props) => props.theme.pink};
 `;
