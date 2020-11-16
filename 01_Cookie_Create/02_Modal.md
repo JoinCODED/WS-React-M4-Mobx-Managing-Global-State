@@ -71,7 +71,7 @@ return (
 
 ```jsx
 <Modal
-  isOpen={showModal}
+  isOpen={isOpen}
   onRequestClose={closeModal}
   style={customStyles}
   contentLabel="Cookie Modal"
