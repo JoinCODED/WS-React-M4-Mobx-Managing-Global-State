@@ -20,3 +20,17 @@ const CookieDetail = () => {
 ```
 
 4. In `App`, delete `_cookies` and remove the `cookies` import. Also remove `cookies` and `deleteCookies` that you're passing as `props` to `CookieDetail`.
+
+5. Try deleting a cookie from the detail page. It doesn't work?? Well, if you go to the list page, you'll see it's actually been deleted. But when you delete the cookie, the `CookieDetail` component doesn't respond to the change in the data. So we have to *make it an `observer`*.
+
+    Import `observer` in `CookieDetail.js`:
+
+    ```javascript
+    import { observer } from "mobx-react";
+    ```
+
+    Then set `CookieDetail` as an `observer`:
+    
+    ```javascript
+    export default observer(CookieDetail);
+    ```
