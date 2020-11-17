@@ -75,13 +75,21 @@ export default observer(CookieList);
 
 12. Well... it's still not updating! There's one more thing we need to do... We need to set the `createCookie` function as an `action` in the store.
 
-```javascript
-constructor() {
-  makeObservable(this, {
-    cookies: observable,
-    createCookie: action,
-  })
-}
-```
+    Import `action` in `cookieStore.js`:
+
+    ```javascript
+    import { makeObservable, observable, action } from "mobx";
+    ```
+
+    Then set `createCookie` as an `action`:
+
+    ```javascript
+    constructor() {
+      makeObservable(this, {
+        cookies: observable,
+        createCookie: action,
+      })
+    }
+    ```
 
 13. Now we can remove `createCookie` from `App`, `CookieList` and `CookieModal`! A HUUUUGEE TARARARAAAAAAA!!!
