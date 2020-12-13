@@ -26,43 +26,29 @@ class CookieStore {
 }
 ```
 
-6. Now we turn this class into a store that can manage the changes in `cookies`. To do that we will import `decorate` and `observable` from `mobx`:
+6. Now we turn this class into a store that can manage the changes in `cookies`. To do that we will import `makeAutoObservable` and `observable` from `mobx`:
 
 ```javascript
-import { makeObservable, observable } from "mobx";
+import { makeAutoObservable, observable } from "mobx";
 ```
 
-7. Next, we need to define a constructor for our class, and call `makeObservable` inside, and pass it `this`. This'll give our class `CookieStore` the superpowers of a MobX store.
-
-```javascript
-class CookieStore {
-  cookies = cookies;
-
-  constructor() {
-    makeObservable(this);
-  }
-}
-```
-
-8. Also, `makeObservable` takes another object. In this object we will define which properties that can be observed by components. If a property is defined as observable, components can see the changes that occur to it.
+7. Next, we need to define a constructor for our class, and call `makeAutoObservable` inside, and pass it `this`. This'll give our class `CookieStore` the superpowers of a MobX store.
 
 ```javascript
 class CookieStore {
   cookies = cookies;
 
   constructor() {
-    makeObservable(this, {
-      cookies: observable
-    })
+    makeAutoObservable(this);
   }
 }
 ```
 
-9. Next we need to create an instance of our store and export it. If we just export the class, it won't work like we expect it to.
+8. Next we need to create an instance of our store and export it. If we just export the class, it won't work like we expect it to.
 
 ```javascript
 const cookieStore = new CookieStore();
 export default cookieStore;
 ```
 
-10. Let's use our new store!
+9. Let's use our new store!
