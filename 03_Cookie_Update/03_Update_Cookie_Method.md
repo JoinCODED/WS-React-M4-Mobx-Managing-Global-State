@@ -13,7 +13,8 @@ updateCookie = (updatedCookie) => {
 ```javascript
 const handleSubmit = (event) => {
   event.preventDefault();
-  cookieStore[oldCookie ? "updateCookie" : "createCookie"](cookie);
+  if (oldCookie) cookieStore.updateCookie(cookie);
+  else cookieStore.createCookie(cookie);
   closeModal();
 };
 ```
@@ -80,7 +81,7 @@ export default observer(CookieItem);
 
 11. Let's try it again. It's working!!!
 
-10. But the code is so ugly! To clean it up, we will loop over our `cookie` object and only replace the properties that exist in `updatedCookie`. Let's take a look at the [documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) first.
+12. But the code is so ugly! To clean it up, we will loop over our `cookie` object and only replace the properties that exist in `updatedCookie`. Let's take a look at the [documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) first.
 
 ```javascript
 updateCookie = (updatedCookie) => {
