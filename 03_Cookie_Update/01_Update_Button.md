@@ -1,38 +1,35 @@
 Let's create an update button in our cookie item component that opens the modal.
 
-1. In `styles.js`, create a styled component called `UpdateButtonStyled`
+1. In `styles.css`, create a class called `update-button`
 
-```
-export const UpdateButtonStyled = styled.p`
-  color: ${(props) => props.theme.pink};
-`;
+```css
+.update-button {
+  color: #ff85a2;
+}
 ```
 
-2. Create a new component called `UpdateButton`, import `UpdateButtonStyled` and render it:
+2. Create a new component called `UpdateButton`, use `update-button` and render it:
 
 ```javascript
-import React from "react";
-
-// Styling
-import { UpdateButtonStyled } from "../../styles";
+import React from 'react';
 
 const UpdateButton = () => {
-  return <UpdateButtonStyled>Update</UpdateButtonStyled>;
+  return <button className="update-button">Update</button>;
 };
 
 export default UpdateButton;
 ```
 
-3. Also we will import and render our modal. Wrap the two components with a fragment `<> </>`
+3. Also we will use it and render our modal. Wrap the two components with a fragment `<> </>`
 
 ```javascript
 // Components
-import CookieModal from "../modals/CookieModal";
+import CookieModal from '../modals/CookieModal';
 
 const UpdateButton = () => {
   return (
     <>
-      <UpdateButtonStyled>Update</UpdateButtonStyled>
+      <button className="update-button">Update</button>;
       <CookieModal />
     </>
   );
@@ -63,10 +60,12 @@ const UpdateButton = () => {
 <DeleteButton cookieId={cookie.id} />
 ```
 
-7. Now when clicking on this button, we want to open the modal. Give `UpdateButtonStyled` an `onClick` event and pass it `openModal`.
+7. Now when clicking on this button, we want to open the modal. Give the `button` an `onClick` event and pass it `openModal`.
 
 ```jsx
-<UpdateButtonStyled onClick={openModal}>Update</UpdateButtonStyled>
+<button onClick={openModal} className="update-button">
+  Update
+</button>
 ```
 
 8. Click on the button, the modal is open! Perfect!

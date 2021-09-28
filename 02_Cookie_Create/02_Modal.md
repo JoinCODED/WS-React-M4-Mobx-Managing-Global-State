@@ -31,7 +31,7 @@ const openModal = () => setIsOpen(true);
 6. Now let's create our modal component. Create a new folder called `modals` and a file called `CookieModal`. Setup your component:
 
 ```javascript
-import React from "react";
+import React from 'react';
 
 const CookieModal = () => {
   return <div></div>;
@@ -43,7 +43,7 @@ export default CookieModal;
 7. In `CookieModal`, import `Modal` from `react-modal`.
 
 ```javascript
-import Modal from "react-modal";
+import Modal from 'react-modal';
 ```
 
 8. Render `Modal`, remove `onAfterOpen`.
@@ -53,7 +53,6 @@ return (
   <Modal
     isOpen={}
     onRequestClose={}
-    style={customStyles}
     contentLabel="Example Modal"
   >
     <h3>New Cookie</h3>
@@ -70,12 +69,7 @@ return (
 10. Pass `isOpen` and `closeModal` to `Modal`.
 
 ```jsx
-<Modal
-  isOpen={isOpen}
-  onRequestClose={closeModal}
-  style={customStyles}
-  contentLabel="Cookie Modal"
->
+<Modal isOpen={isOpen} onRequestClose={closeModal} contentLabel="Cookie Modal">
   <h3>New Cookie</h3>
 </Modal>
 ```

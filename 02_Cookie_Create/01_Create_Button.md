@@ -9,13 +9,13 @@ In this lesson, we will create more cookies. We will have a create button, when 
 2. Let's try it out, first choose your icon and import it:
 
 ```javascript
-import { BsPlusCircle } from "react-icons/bs";
+import { BsPlusCircle } from 'react-icons/bs';
 ```
 
 3. Then you simply render it as a component:
 
 ```jsx
-<ListWrapper className="row">{cookieList}</ListWrapper>
+<div className="list">{cookieList}</div>
 <BsPlusCircle />
 ```
 
