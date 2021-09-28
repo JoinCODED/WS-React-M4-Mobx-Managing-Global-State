@@ -4,7 +4,7 @@ Let's create our update method
 
 ```javascript
 updateCookie = (updatedCookie) => {
-  console.log("CookieStore -> updateCookie -> updatedCookie", updatedCookie);
+  console.log('CookieStore -> updateCookie -> updatedCookie', updatedCookie);
 };
 ```
 
@@ -22,9 +22,9 @@ const handleSubmit = (event) => {
 3. Also, let's fix the submit button to render `Update` if `oldCookie` exists.
 
 ```jsx
-<CreateButtonStyled className="btn float-right" type="submit">
-  {oldCookie ? "Update" : "Create"}
-</CreateButtonStyled>
+<button className="create-button btn float-right" type="submit">
+  {oldCookie ? 'Update' : 'Create'}
+</button>
 ```
 
 4. Let's call `updateCookie`. Yes! It's working. Now, how can we actually update our cookie in our list of cookies?
@@ -33,7 +33,7 @@ const handleSubmit = (event) => {
 
 ```javascript
 updateCookie = (updatedCookie) => {
-  console.log("CookieStore -> updateCookie -> updatedCookie", updatedCookie);
+  console.log('CookieStore -> updateCookie -> updatedCookie', updatedCookie);
   const cookie = this.cookies.find((cookie) => cookie.id === updatedCookie.id);
 };
 ```
@@ -50,7 +50,7 @@ updateCookie = (updatedCookie) => {
   cookie.name = updatedCookie.name;
   cookie.price = updatedCookie.price;
   cookie.image = updatedCookie.image;
-  console.log("updateCookie -> cookie", cookie);
+  console.log('updateCookie -> cookie', cookie);
 };
 ```
 
@@ -70,7 +70,7 @@ constructor() {
 8. Let's test it out. Nothing happened. That's because `CookieItem` must be an `observer`. Import `observer`
 
 ```javascript
-import { observer } from "mobx-react";
+import { observer } from 'mobx-react';
 ```
 
 9. Wrap `CookieItem` with `observer`
