@@ -3,7 +3,7 @@ Now when clicking on this button, we want to open a modal. We won't be using boo
 1. Install `react-modal`:
 
 ```shell
-  $ yarn add react-modal
+  $ npm install react-modal
 ```
 
 2. Let's take a look at the [documentation](https://www.npmjs.com/package/react-modal). As you can see, a modal needs a state to open and close it. And we need to pass the state and set method to the modal.
