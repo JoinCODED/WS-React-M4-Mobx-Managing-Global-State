@@ -22,7 +22,7 @@
 3. To add a slug, we will install a library called [`react-slugify`](https://www.npmjs.com/package/react-slugify).
 
    ```shell
-     $ yarn add react-slugify
+     $ npm install react-slugify
    ```
 
 4. Import `slugify` in `cookieStore.js`
