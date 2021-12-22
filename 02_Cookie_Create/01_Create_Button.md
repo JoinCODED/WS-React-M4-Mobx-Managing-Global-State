@@ -3,7 +3,7 @@ In this lesson, we will create more cookies. We will have a create button, when 
 1. Let's add a plus icon in our list page. But how can we add icons? We will use a library called [React Icons](https://react-icons.github.io/react-icons/). Let's install it.
 
 ```shell
-  $ yarn add react-icons
+  $ npm install react-icons
 ```
 
 2. Let's try it out, first choose your icon and import it:
