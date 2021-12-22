@@ -3,7 +3,7 @@ At this point, our code is growing, and the code in `App` is becoming bulkier. A
 1. Start with installing `mobx` and `mobx-react`.
 
 ```shell
-  $ yarn add mobx mobx-react
+  $ npm install mobx mobx-react
 ```
 
 2. Create a folder in `src` called `stores`. This is where we will create all our application's stores.
